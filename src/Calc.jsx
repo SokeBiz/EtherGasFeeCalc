@@ -64,19 +64,19 @@ function Calc() {
                     <main className='d-flex flex-wrap justify-content-center'>
                         <div>
                             <p className='m-0 ps-2 fs-5'>Mint Price</p>
-                            <input ref={mintPriceRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="text" placeholder='Ether' />
+                            <input ref={mintPriceRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Ether' />
                         </div>
                         <div>
                             <p className='m-0 ps-2 fs-5'>Gas Limit</p>
-                            <input ref={gasLimitRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="text" placeholder='Units of gas' />
+                            <input ref={gasLimitRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Units of gas' />
                         </div>
                         <div>
                             <p className='m-0 ps-2 fs-5'>Max Gas Fee</p>
-                            <input ref={maxGasRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="text" placeholder='Gwei' />
+                            <input ref={maxGasRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Gwei' />
                         </div>
                         <div>
                             <p className='m-0 ps-2 fs-5'>Max Priority Fee</p>
-                            <input ref={maxPrioRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="text" placeholder='Gwei' />
+                            <input ref={maxPrioRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Gwei' />
                         </div>
                     </main>
 
