@@ -21,6 +21,13 @@
   background: rgb(63,94,251);
 }
 
+input{
+  text-decoration: none;
+  color: black;
+}
+input:focus-within{
+  outline: none;
+}
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -81,16 +88,6 @@ button:focus-visible {
 } */
 
 @media (prefers-color-scheme: light) {
-  /* :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  } */
   #main{
     background: url(https://source.unsplash.com/E8Ufcyxz514/2400x1823) center / cover no-repeat fixed;
   }

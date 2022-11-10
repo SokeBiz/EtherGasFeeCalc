@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRef } from 'react';
 import axios from 'axios'
+import "./index.css"
 
 function Calc() {
     
@@ -46,7 +47,7 @@ function Calc() {
         setFinalGas(feeCalc.toFixed(5)) //This sets the final gas fee
         setDollar(price.toFixed(2)) //This sets the final gas fee in dollars
         
-        feeCalc? result.current.style.display = 'flex': null;x
+        feeCalc? result.current.style.display = 'flex': null;
     }
 
     return(
