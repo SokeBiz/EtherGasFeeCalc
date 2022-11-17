@@ -13,7 +13,7 @@ function Calc() {
     const mintPriceRef = useRef(null)
     const gasLimitRef = useRef(null)
     const baseGasRef = useRef(null)
-    const basePrioRef = useRef(null)
+    const maxPrioRef = useRef(null)
     const result = useRef(null)
 
     let isMounted = true
@@ -40,8 +40,8 @@ function Calc() {
         let mintPrice = mintPriceRef?.current.value;
         let gasLimit = gasLimitRef?.current.value;
         let baseGas = baseGasRef?.current.value;
-        let basePrio = basePrioRef.current.value;
-        let gweiCalc = (Number(gasLimit)) * (Number(baseGas) + Number(basePrio))
+        let maxPrio = maxPrioRef.current.value;
+        let gweiCalc = (Number(gasLimit)) * (Number(baseGas) + Number(maxPrio))
         let feeCalc = ((gweiCalc * 10e-10) + Number(mintPrice))
         let price = feeCalc * data.result.ethusd
         setFinalGas(feeCalc.toFixed(5)) //This sets the final gas fee
@@ -75,8 +75,8 @@ function Calc() {
                             <input ref={baseGasRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Gwei' />
                         </div>
                         <div>
-                            <p className='m-0 ps-2 fs-5'>base Priority Fee</p>
-                            <input ref={basePrioRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Gwei' />
+                            <p className='m-0 ps-2 fs-5'>Max Priority Fee</p>
+                            <input ref={maxPrioRef} className='m-2 w-40 border rounded p-1 border-secondary bg-transparent' type="number" placeholder='Gwei' />
                         </div>
                     </main>
 
