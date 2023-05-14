@@ -8,7 +8,9 @@ function Calc() {
     const [finalGas, setFinalGas] = useState()
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
+    const [loadgas, setLoadgas] = useState(true)
     const [dollar, setDollar] = useState()
+    const [gas, setGas] = useState([])
 
     const mintPriceRef = useRef(null)
     const gasLimitRef = useRef(null)
@@ -30,10 +32,24 @@ function Calc() {
             console.log('error');
         }
     }
-       if (isMounted) getData()
-       return () => {
-           isMounted = false
+
+       const getGas = async () => {
+        try{
+            const url ='https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey=JZP1ZQ7SECZAHT8C4629YMISF2VABZTSEJ'
+            const res = await axios.get(url)
+            setGas(res.data)
+            setLoadgas(false)
         }
+        catch(error){
+            console.log(error);
+        }
+    }
+       
+        if (isMounted) getData() && getGas()
+        return () => {
+            isMounted = false
+         }
+
     }, [])
 
     const calcGas = () => {
@@ -58,9 +74,13 @@ function Calc() {
                     <h2 className='text-center'>
                         Estimated Gas Fee Calculator
                     </h2>
-                    <div>
-                        {(!loading) && <p className='p-0 m-0 text-center'>ETH: ${data.result.ethusd} </p>}
+                    <div className='text-center'>
+                        {(!loading) && <span className='p-0 m-1 text-center'>ETH Ξ ${data.result.ethusd}</span>}
+                        {(!loadgas) && <span className='p-0 m-1 text-center'>Gas: {gas.result.ProposeGasPrice} gwei </span>}
                     </div>
+                    {/* <div>
+                        {(!loadgas) && <p className='p-0 m-0 text-center'>Gas: {gas.result.ProposeGasPrice} gwei </p>}
+                    </div> */}
                     <main className='d-flex flex-wrap justify-content-center'>
                         <div>
                             <p className='m-0 ps-2 fs-5'>Mint Price</p>
