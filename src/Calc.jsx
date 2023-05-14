@@ -78,9 +78,6 @@ function Calc() {
                         {(!loading) && <span className='p-0 m-1 text-center'>ETH Ξ ${data.result.ethusd}</span>}
                         {(!loadgas) && <span className='p-0 m-1 text-center'>Gas: {gas.result.ProposeGasPrice} gwei </span>}
                     </div>
-                    {/* <div>
-                        {(!loadgas) && <p className='p-0 m-0 text-center'>Gas: {gas.result.ProposeGasPrice} gwei </p>}
-                    </div> */}
                     <main className='d-flex flex-wrap justify-content-center'>
                         <div>
                             <p className='m-0 ps-2 fs-5'>Mint Price</p>
