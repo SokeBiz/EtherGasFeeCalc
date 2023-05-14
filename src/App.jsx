@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import React from 'react';
-
-import reactLogo from './assets/react.svg'
 import './App.css'
 import Calc from './Calc'
 
@@ -15,4 +13,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
